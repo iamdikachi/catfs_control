@@ -1,0 +1,6 @@
+{
+  "name": "Cyber Attack Tracing System",
+  "description": "An interactive full-stack cybersecurity tracer, visual threat map analyzer, and AI-powered log forensics and mitigation guide.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
