@@ -1,0 +1,350 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Admin SecOps",
+      "email": "admin@trace.org",
+      "role": "Admin",
+      "created_at": "2026-07-11T08:00:00.000Z"
+    },
+    {
+      "id": "u2",
+      "name": "Investigator Dave",
+      "email": "dave@trace.org",
+      "role": "Investigator",
+      "created_at": "2026-07-11T08:30:00.000Z"
+    }
+  ],
+  "reports": [
+    {
+      "id": "rep-x1676lmts",
+      "tracking_ref": "REF-2050-YFHH",
+      "reporter_id": null,
+      "reporter_name": "emmanuel",
+      "reporter_contact": "emmanuelnnadi097@gmail.com",
+      "attack_type": "DDoS HTTP Flood on Main Gateway",
+      "description": "Sudden surge in HTTP traffic causing gateway timeouts",
+      "affected_system": "Main Application Load Balancer",
+      "severity": "High",
+      "status": "Under Review",
+      "created_at": "2026-07-13T17:58:05.080Z",
+      "assigned_to": null,
+      "assigned_to_name": null
+    },
+    {
+      "id": "rep-001",
+      "tracking_ref": "REF-8231-A42F",
+      "reporter_id": null,
+      "reporter_name": "Anonymous Enterprise Client",
+      "reporter_contact": "secured-anonymous@client.io",
+      "attack_type": "DDoS HTTP Flood on Main Gateway",
+      "description": "Coordinated botnet-orchestrated concurrent connections flooding the primary application load balancer, causing severe CPU exhaustion and latency spikes.",
+      "affected_system": "Main API Gateway Load Balancer",
+      "severity": "Critical",
+      "status": "Investigating",
+      "created_at": "2026-07-11T08:50:01.000Z",
+      "assigned_to": "u2",
+      "assigned_to_name": "Investigator Dave"
+    },
+    {
+      "id": "rep-002",
+      "tracking_ref": "REF-4412-B90A",
+      "reporter_id": null,
+      "reporter_name": "Fintech Systems Inc.",
+      "reporter_contact": "ciso@fintechsys.io",
+      "attack_type": "SQL Injection Probe on Users API",
+      "description": "Malicious query payload injections attempting to bypass authentication, expose password hashes, and leak system tables.",
+      "affected_system": "Users Identity Platform SSO",
+      "severity": "High",
+      "status": "Resolved",
+      "created_at": "2026-07-11T08:51:14.000Z",
+      "assigned_to": "u2",
+      "assigned_to_name": "Investigator Dave"
+    },
+    {
+      "id": "rep-003",
+      "tracking_ref": "REF-1190-C22E",
+      "reporter_id": null,
+      "reporter_name": "Anonymous System Watcher",
+      "reporter_contact": "watcher@internal.net",
+      "attack_type": "SSH Root Brute-Force Scanning",
+      "description": "Automated dictionary attacks hammering SSH port 22 in rapid succession trying common credentials like 'admin', 'root', and 'support'.",
+      "affected_system": "Bastion Gate SSH Portal",
+      "severity": "High",
+      "status": "Under Review",
+      "created_at": "2026-07-11T08:52:10.000Z",
+      "assigned_to": null,
+      "assigned_to_name": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-001",
+      "report_id": "rep-001",
+      "file_name": "gateway_cpu_spike.log",
+      "file_type": "log",
+      "content_summary": "[2026-07-11 08:50:01] INFO: TCP Handshake initiated from bot-node-185-220-101-99.net (185.220.101.99:54231)\n[2026-07-11 08:50:01] WARNING: Rate limit exceeded for IP 185.220.101.99. Current count: 1250 req/sec. Limit: 100 req/sec.\n[2026-07-11 08:50:02] ALERT: High load on /api/v1/auth/session - CPU 98%, Mem 91%\n[2026-07-11 08:50:02] ERROR: Gateway Timeout 504 on upstream application-node-03",
+      "uploaded_at": "2026-07-11T08:50:02.000Z"
+    },
+    {
+      "id": "ev-002",
+      "report_id": "rep-002",
+      "file_name": "sqli_probe_payload.log",
+      "file_type": "log",
+      "content_summary": "[2026-07-11 08:51:14] INFO: Connection accepted from tor-exit-node.nl (103.45.201.12:43110) to https://api.enterprise.com/v1/users/login\n[2026-07-11 08:51:14] INFO: Request payload: {\"email\": \"admin@enterprise.com\", \"password\": \"' OR '1'='1 --\"}\n[2026-07-11 08:51:15] WARN: Postgres SQL Exception generated: \"terminated by quote mismatch\" near column 'password'",
+      "uploaded_at": "2026-07-11T08:51:15.000Z"
+    },
+    {
+      "id": "ev-003",
+      "report_id": "rep-003",
+      "file_name": "bastion_ssh_fail.log",
+      "file_type": "log",
+      "content_summary": "Jul 11 08:52:10 enterprise-bastion sshd[23120]: Invalid user admin from 45.14.220.67 port 59003\nJul 11 08:52:11 enterprise-bastion sshd[23120]: Connection closed by authenticating user admin 45.14.220.67 port 59003 [preauth]\nJul 11 08:52:12 enterprise-bastion sshd[23128]: Invalid user root from 45.14.220.67 port 59012\nJul 11 08:52:12 enterprise-bastion sshd[23128]: Failed password for invalid user root from 45.14.220.67 port 59012 ssh2",
+      "uploaded_at": "2026-07-11T08:52:12.000Z"
+    }
+  ],
+  "status_history": [
+    {
+      "id": "sh-v6s5cws2y",
+      "report_id": "rep-x1676lmts",
+      "old_status": "Submitted",
+      "new_status": "Under Review",
+      "changed_by": "u1",
+      "changed_by_name": "Admin SecOps",
+      "changed_at": "2026-07-13T18:15:25.152Z",
+      "note": "working on it"
+    },
+    {
+      "id": "sh-zno4lcxuv",
+      "report_id": "rep-x1676lmts",
+      "old_status": "-",
+      "new_status": "Submitted",
+      "changed_by": "anonymous",
+      "changed_by_name": "Public Reporter",
+      "changed_at": "2026-07-13T17:58:05.080Z",
+      "note": "Incident reported publicly via secure intake portal."
+    },
+    {
+      "id": "sh-001",
+      "report_id": "rep-001",
+      "old_status": "Submitted",
+      "new_status": "Under Review",
+      "changed_by": "u1",
+      "changed_by_name": "Admin SecOps",
+      "changed_at": "2026-07-11T09:00:00.000Z",
+      "note": "Initial triage complete. Report contains valid threat vectors."
+    },
+    {
+      "id": "sh-002",
+      "report_id": "rep-001",
+      "old_status": "Under Review",
+      "new_status": "Investigating",
+      "changed_by": "u1",
+      "changed_by_name": "Admin SecOps",
+      "changed_at": "2026-07-11T09:15:00.000Z",
+      "note": "Assigned to Dave. Log payload suggests coordinated Botnet activity from Frankfurt transit nodes."
+    },
+    {
+      "id": "sh-003",
+      "report_id": "rep-002",
+      "old_status": "Submitted",
+      "new_status": "Under Review",
+      "changed_by": "u1",
+      "changed_by_name": "Admin SecOps",
+      "changed_at": "2026-07-11T09:05:00.000Z",
+      "note": "WAF logs received. Validating WAF rules database block parameters."
+    },
+    {
+      "id": "sh-004",
+      "report_id": "rep-002",
+      "old_status": "Under Review",
+      "new_status": "Investigating",
+      "changed_by": "u2",
+      "changed_by_name": "Investigator Dave",
+      "changed_at": "2026-07-11T09:30:00.000Z",
+      "note": "Analyzing Users table indices. No signs of earlier SQL execution success. Confirming payload was drop-filtered."
+    },
+    {
+      "id": "sh-005",
+      "report_id": "rep-002",
+      "old_status": "Investigating",
+      "new_status": "Resolved",
+      "changed_by": "u2",
+      "changed_by_name": "Investigator Dave",
+      "changed_at": "2026-07-11T10:45:00.000Z",
+      "note": "WAF rate limit rules tightened. Target User session isolated and credential logs rotated. Attack fully mitigated."
+    },
+    {
+      "id": "sh-006",
+      "report_id": "rep-003",
+      "old_status": "Submitted",
+      "new_status": "Under Review",
+      "changed_by": "u1",
+      "changed_by_name": "Admin SecOps",
+      "changed_at": "2026-07-11T09:40:00.000Z",
+      "note": "Automated Fail2Ban ban active. SSH root dictionary attack contained on Bastion. Key rotations planned."
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": "aud-yyyxz188q",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "READ_REPORTS_LIST",
+      "target_table": "reports",
+      "target_id": "multiple",
+      "timestamp": "2026-07-13T18:16:12.962Z",
+      "details": "Admin SecOps retrieved the list of incident reports (count: 4) with parameters: status=All, severity=All"
+    },
+    {
+      "id": "aud-svtr2mofj",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "READ_REPORTS_LIST",
+      "target_table": "reports",
+      "target_id": "multiple",
+      "timestamp": "2026-07-13T18:15:25.235Z",
+      "details": "Admin SecOps retrieved the list of incident reports (count: 0) with parameters: status=Submitted, severity=All"
+    },
+    {
+      "id": "aud-pkazy79tw",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "UPDATE_STATUS",
+      "target_table": "reports",
+      "target_id": "rep-x1676lmts",
+      "timestamp": "2026-07-13T18:15:25.189Z",
+      "details": "Status updated from Submitted to Under Review. Action Note: working on it"
+    },
+    {
+      "id": "aud-z116novx7",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "READ_REPORTS_LIST",
+      "target_table": "reports",
+      "target_id": "multiple",
+      "timestamp": "2026-07-13T18:14:32.404Z",
+      "details": "Admin SecOps retrieved the list of incident reports (count: 1) with parameters: status=Submitted, severity=All"
+    },
+    {
+      "id": "aud-xbbvl3y9g",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "READ_REPORTS_LIST",
+      "target_table": "reports",
+      "target_id": "multiple",
+      "timestamp": "2026-07-13T18:14:09.896Z",
+      "details": "Admin SecOps retrieved the list of incident reports (count: 4) with parameters: status=All, severity=All"
+    },
+    {
+      "id": "aud-t7tdu1rwt",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "READ_REPORTS_LIST",
+      "target_table": "reports",
+      "target_id": "multiple",
+      "timestamp": "2026-07-13T18:14:09.761Z",
+      "details": "Admin SecOps retrieved the list of incident reports (count: 4) with parameters: status=All, severity=All"
+    },
+    {
+      "id": "aud-c51f0qo6u",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "LOGIN",
+      "target_table": "users",
+      "target_id": "u1",
+      "timestamp": "2026-07-13T18:14:09.714Z",
+      "details": "Admin SecOps logged in successfully as Admin."
+    },
+    {
+      "id": "aud-aitqwo50o",
+      "actor_id": "anonymous",
+      "actor_name": "Public Reporter",
+      "action": "TRACK_REPORT",
+      "target_table": "reports",
+      "target_id": "rep-002",
+      "timestamp": "2026-07-13T18:13:25.687Z",
+      "details": "Public tracking reference looked up successfully for ref: REF-4412-B90A"
+    },
+    {
+      "id": "aud-xar0meale",
+      "actor_id": "anonymous",
+      "actor_name": "Public Reporter",
+      "action": "TRACK_REPORT",
+      "target_table": "reports",
+      "target_id": "rep-001",
+      "timestamp": "2026-07-13T18:13:20.029Z",
+      "details": "Public tracking reference looked up successfully for ref: REF-8231-A42F"
+    },
+    {
+      "id": "aud-g61etjy2g",
+      "actor_id": "anonymous",
+      "actor_name": "Public Reporter",
+      "action": "EXPORT_CASE_FILE",
+      "target_table": "reports",
+      "target_id": "rep-x1676lmts",
+      "timestamp": "2026-07-13T18:12:55.806Z",
+      "details": "Exported case file for report REF-2050-YFHH in CSV format."
+    },
+    {
+      "id": "aud-96ry960vc",
+      "actor_id": "anonymous",
+      "actor_name": "Public Reporter",
+      "action": "TRACK_REPORT",
+      "target_table": "reports",
+      "target_id": "rep-x1676lmts",
+      "timestamp": "2026-07-13T17:58:52.539Z",
+      "details": "Public tracking reference looked up successfully for ref: REF-2050-YFHH"
+    },
+    {
+      "id": "aud-0jxe4xla9",
+      "actor_id": "anonymous",
+      "actor_name": "Public Reporter",
+      "action": "SUBMIT_REPORT",
+      "target_table": "reports",
+      "target_id": "rep-x1676lmts",
+      "timestamp": "2026-07-13T17:58:05.126Z",
+      "details": "Submitted new report for DDoS HTTP Flood on Main Gateway. Reference Generated: REF-2050-YFHH"
+    },
+    {
+      "id": "aud-001",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "LOGIN",
+      "target_table": "users",
+      "target_id": "u1",
+      "timestamp": "2026-07-11T08:00:00.000Z",
+      "details": "Admin SecOps successfully logged into SecOps control panel."
+    },
+    {
+      "id": "aud-002",
+      "actor_id": "anonymous",
+      "actor_name": "Public Reporter",
+      "action": "SUBMIT_REPORT",
+      "target_table": "reports",
+      "target_id": "rep-001",
+      "timestamp": "2026-07-11T08:50:01.000Z",
+      "details": "Anonymous public report submitted for DDoS attack vectors. Reference generated: REF-8231-A42F."
+    },
+    {
+      "id": "aud-003",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "UPDATE_STATUS",
+      "target_table": "reports",
+      "target_id": "rep-001",
+      "timestamp": "2026-07-11T09:00:00.000Z",
+      "details": "Admin changed report status from Submitted to Under Review. Note: Triage complete."
+    },
+    {
+      "id": "aud-004",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "ASSIGN_REPORT",
+      "target_table": "reports",
+      "target_id": "rep-001",
+      "timestamp": "2026-07-11T09:15:00.000Z",
+      "details": "Admin assigned report to investigator Dave."
+    }
+  ]
+}
