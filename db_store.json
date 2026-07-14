@@ -17,6 +17,51 @@
   ],
   "reports": [
     {
+      "id": "rep-pg2cc7gk7",
+      "tracking_ref": "REF-6213-JKA9",
+      "reporter_id": null,
+      "reporter_name": "dsdf",
+      "reporter_contact": "echetae1@gmail.com",
+      "attack_type": "DDoS HTTP Flood",
+      "description": "sdfaf",
+      "affected_system": "Main Application Load Balancer",
+      "severity": "High",
+      "status": "Submitted",
+      "created_at": "2026-07-14T12:28:16.870Z",
+      "assigned_to": null,
+      "assigned_to_name": null
+    },
+    {
+      "id": "rep-1mbyu5sqr",
+      "tracking_ref": "REF-2662-CLFF",
+      "reporter_id": null,
+      "reporter_name": "hhhhhhhhh",
+      "reporter_contact": "echetae1@gmail.com",
+      "attack_type": "DDoS HTTP Flood",
+      "description": "yy",
+      "affected_system": "Main Application Load Balancer",
+      "severity": "High",
+      "status": "Submitted",
+      "created_at": "2026-07-14T12:22:34.175Z",
+      "assigned_to": null,
+      "assigned_to_name": null
+    },
+    {
+      "id": "rep-asz90xv7b",
+      "tracking_ref": "REF-8048-ZSNU",
+      "reporter_id": null,
+      "reporter_name": "emma",
+      "reporter_contact": "emmanuelnnadi097@gmail.com",
+      "attack_type": "SQL Injection Probe on Users API",
+      "description": "ggfdg",
+      "affected_system": "Main Application Load Balancer",
+      "severity": "Critical",
+      "status": "Submitted",
+      "created_at": "2026-07-14T11:55:55.761Z",
+      "assigned_to": null,
+      "assigned_to_name": null
+    },
+    {
       "id": "rep-x1676lmts",
       "tracking_ref": "REF-2050-YFHH",
       "reporter_id": null,
@@ -105,6 +150,36 @@
   ],
   "status_history": [
     {
+      "id": "sh-gvswx9dxa",
+      "report_id": "rep-pg2cc7gk7",
+      "old_status": "-",
+      "new_status": "Submitted",
+      "changed_by": "anonymous",
+      "changed_by_name": "Public Reporter",
+      "changed_at": "2026-07-14T12:28:16.870Z",
+      "note": "Incident reported publicly via secure intake portal."
+    },
+    {
+      "id": "sh-d2m5y131s",
+      "report_id": "rep-1mbyu5sqr",
+      "old_status": "-",
+      "new_status": "Submitted",
+      "changed_by": "anonymous",
+      "changed_by_name": "Public Reporter",
+      "changed_at": "2026-07-14T12:22:34.175Z",
+      "note": "Incident reported publicly via secure intake portal."
+    },
+    {
+      "id": "sh-nbivo76vs",
+      "report_id": "rep-asz90xv7b",
+      "old_status": "-",
+      "new_status": "Submitted",
+      "changed_by": "anonymous",
+      "changed_by_name": "Public Reporter",
+      "changed_at": "2026-07-14T11:55:55.761Z",
+      "note": "Incident reported publicly via secure intake portal."
+    },
+    {
       "id": "sh-v6s5cws2y",
       "report_id": "rep-x1676lmts",
       "old_status": "Submitted",
@@ -186,6 +261,86 @@
     }
   ],
   "audit_logs": [
+    {
+      "id": "aud-aayadkztf",
+      "actor_id": "anonymous",
+      "actor_name": "Public Reporter",
+      "action": "SUBMIT_REPORT",
+      "target_table": "reports",
+      "target_id": "rep-pg2cc7gk7",
+      "timestamp": "2026-07-14T12:28:16.904Z",
+      "details": "Submitted new report for DDoS HTTP Flood. Reference Generated: REF-6213-JKA9"
+    },
+    {
+      "id": "aud-un3d1perp",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "READ_REPORTS_LIST",
+      "target_table": "reports",
+      "target_id": "multiple",
+      "timestamp": "2026-07-14T12:27:15.927Z",
+      "details": "Admin SecOps retrieved the list of incident reports (count: 6) with parameters: status=All, severity=All"
+    },
+    {
+      "id": "aud-630s4n7y6",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "READ_REPORTS_LIST",
+      "target_table": "reports",
+      "target_id": "multiple",
+      "timestamp": "2026-07-14T12:22:54.577Z",
+      "details": "Admin SecOps retrieved the list of incident reports (count: 6) with parameters: status=All, severity=All"
+    },
+    {
+      "id": "aud-0i1fsq7xt",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "READ_REPORTS_LIST",
+      "target_table": "reports",
+      "target_id": "multiple",
+      "timestamp": "2026-07-14T12:22:51.261Z",
+      "details": "Admin SecOps retrieved the list of incident reports (count: 6) with parameters: status=All, severity=All"
+    },
+    {
+      "id": "aud-souf8gra4",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "READ_REPORTS_LIST",
+      "target_table": "reports",
+      "target_id": "multiple",
+      "timestamp": "2026-07-14T12:22:42.497Z",
+      "details": "Admin SecOps retrieved the list of incident reports (count: 6) with parameters: status=All, severity=All"
+    },
+    {
+      "id": "aud-x69nvrlgn",
+      "actor_id": "anonymous",
+      "actor_name": "Public Reporter",
+      "action": "SUBMIT_REPORT",
+      "target_table": "reports",
+      "target_id": "rep-1mbyu5sqr",
+      "timestamp": "2026-07-14T12:22:34.206Z",
+      "details": "Submitted new report for DDoS HTTP Flood. Reference Generated: REF-2662-CLFF"
+    },
+    {
+      "id": "aud-glc4zbkvs",
+      "actor_id": "anonymous",
+      "actor_name": "Public Reporter",
+      "action": "SUBMIT_REPORT",
+      "target_table": "reports",
+      "target_id": "rep-asz90xv7b",
+      "timestamp": "2026-07-14T11:55:55.784Z",
+      "details": "Submitted new report for SQL Injection Probe on Users API. Reference Generated: REF-8048-ZSNU"
+    },
+    {
+      "id": "aud-o6qf4utte",
+      "actor_id": "u1",
+      "actor_name": "Admin SecOps",
+      "action": "READ_REPORTS_LIST",
+      "target_table": "reports",
+      "target_id": "multiple",
+      "timestamp": "2026-07-14T10:50:53.885Z",
+      "details": "Admin SecOps retrieved the list of incident reports (count: 4) with parameters: status=All, severity=All"
+    },
     {
       "id": "aud-yyyxz188q",
       "actor_id": "u1",
